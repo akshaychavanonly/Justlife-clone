@@ -16,15 +16,16 @@ function Service() {
       (materials ? 15 : 0)
     );
   };
+
   return (
-    <div className="flex flex-col lg:flex-row bg-gray-100 min-h-screen p-6">
+    <div className="flex flex-col lg:flex-row bg-gray-100 min-h-screen p-6 space-y-6 lg:space-y-0 lg:space-x-6">
       {/* Left Panel */}
       <div className="flex-1 bg-white shadow-lg p-6 rounded-lg">
         <div>
           <h4 className="text-lg font-semibold mb-2">
             How many hours do you need your professional to stay?
           </h4>
-          <div className="flex space-x-2 mb-6">
+          <div className="flex flex-wrap gap-2 mb-6">
             {[1, 2, 3, 4, 5, 6, 7, 8].map((hour) => (
               <button
                 key={hour}
@@ -43,7 +44,7 @@ function Service() {
           <h4 className="text-lg font-semibold mb-2">
             How many professionals do you need?
           </h4>
-          <div className="flex space-x-2 mb-6">
+          <div className="flex flex-wrap gap-2 mb-6">
             {[1, 2, 3, 4].map((pro) => (
               <button
                 key={pro}
@@ -65,7 +66,7 @@ function Service() {
             Need cleaning materials?{" "}
             <FaInfoCircle className="ml-2 text-gray-500" />
           </h4>
-          <div className="flex space-x-2 mb-6">
+          <div className="flex flex-wrap gap-2 mb-6">
             <button
               className={`px-4 py-2 rounded-full border ${
                 !materials ? "bg-blue-500 text-white" : "bg-gray-200"
@@ -106,7 +107,7 @@ function Service() {
       </div>
 
       {/* Right Panel */}
-      <div className="flex-1 bg-gray-50 shadow-lg p-6 rounded-lg lg:ml-6 mt-6 lg:mt-0">
+      <div className="flex-1 bg-gray-50 shadow-lg p-6 rounded-lg">
         <div className="mb-6">
           <h4 className="text-lg font-semibold mb-2">Booking Details</h4>
           <p className="text-gray-700">
@@ -136,4 +137,5 @@ function Service() {
     </div>
   );
 }
+
 export default Service;
